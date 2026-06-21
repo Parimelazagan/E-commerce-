@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { assets } from "../assets/assets";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { ShopContext } from "../context/ShopContext";
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
+  const { setShowSearch , getCartCount } = useContext(ShopContext);
   return (
     <div className="flex items-center justify-between py-5 font-medium">
       <Link to="/">
@@ -14,7 +17,7 @@ const Navbar = () => {
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
 
-        <NavLink to="/Collections" className="flex flex-col items-center gap-1">
+        <NavLink to="/collections" className="flex flex-col items-center gap-1">
           <p>COLLECTION</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
@@ -30,7 +33,15 @@ const Navbar = () => {
         </NavLink>
       </ul>
       <div className="flex items-center gap-6">
-        <img src={assets.search_icon} className="w-5 cursor-pointer" alt="" />
+        <img
+          onClick={() => {
+            navigate('/collections');
+            setShowSearch(true);
+          }}
+          src={assets.search_icon}
+          className="w-5 cursor-pointer"
+          alt=""
+        />
 
         <div className="group relative">
           <img
@@ -49,8 +60,7 @@ const Navbar = () => {
         </div>
         <Link to="/cart" className="relative">
           <img src={assets.cart_icon} className="w-5 cursor-pointer" alt="" />
-          <div className="absolute -top-2 -right-2 text-xs w-5 h-5 rounded-full flex items-center justify-center bg-red-500 text-white">
-            3
+          <div className="absolute -top-2 -right-2 text-xs w-5 h-5 rounded-full flex items-center justify-center bg-red-500 text-white">{getCartCount()}
           </div>
         </Link>
         <img
@@ -85,7 +95,7 @@ const Navbar = () => {
           <NavLink
             onClick={() => setVisible(false)}
             className="py-2 pl-6 border"
-            to="/collection"
+            to="/collections"
           >
             COLLECTION
           </NavLink>
