@@ -15,7 +15,7 @@ import Orders from './pages/Orders'
 import { ToastContainer, toast } from 'react-toastify';
 const App = () => {
   return (
-    <div className="px-4 sm:px-5 md:px-7 lg:px-9">   {/* For Responsivenes sm=small ...*/}
+    <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
     <ToastContainer/>
     <Navbar />
     <SearchBar/>

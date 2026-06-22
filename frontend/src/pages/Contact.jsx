@@ -20,7 +20,7 @@ const Contact = () => {
             We’d Love to Hear From You
           </h2>
           <p>
-            At Forever, we are committed to providing exceptional service and building lasting relationships. Whether you have a question, feedback, or just want to connect, we're here to assist you. Feel free to reach out, and our team will get back to you as soon as possible.
+            At ShopStack, we are committed to providing exceptional service and building lasting relationships. Whether you have a question, feedback, or just want to connect, we're here to assist you. Feel free to reach out, and our team will get back to you as soon as possible.
           </p>
           <p>
             Our mission is to ensure that your experience with us is seamless and enjoyable. We are always looking for ways to improve, and we value your input in helping us grow and evolve.
@@ -31,7 +31,7 @@ const Contact = () => {
             <h3 className="text-lg font-semibold text-gray-800">Contact Information</h3>
             <p><b>Phone:</b> +91 9999888877</p>
             <p><b>Email:</b> contact@shopStack.com</p>
-            <p><b>Address:</b> 123 Forever Blvd, Suite 100, New York, NY 10001, USA</p>
+            <p><b>Address:</b> 123 shopStack Blvd, Suite 100, New York, NY 10001, USA</p>
           </div>
         </div>
 
